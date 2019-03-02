@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale'
+<html b:css='false' b:version='2' class='v2' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale'
     xmlns='http://www.w3.org/1999/xhtml'
     xmlns:b='http://www.google.com/2005/gml/b'
     xmlns:data='http://www.google.com/2005/gml/data'
@@ -15,12 +15,35 @@
             #############################
         ]]>
     </b:skin>
-    &lt;/head&gt;&lt;!--
-    <head/>--&gt;
+    &lt;/head&gt;&lt;!--<head/>--&gt;
 
     <body>
         <b:section class='navbar' id='navbar' maxwidgets='1' name='Navbar' showaddelement='no'>
-            <b:widget id='Navbar1' locked='true' title='Navigation' type='Navbar'></b:widget>
+            <b:widget id='Navbar1' locked='true' type='Navbar'></b:widget>
         </b:section>
-    </body>--&gt;&lt;/body&gt;
+        <div id='pl-wrapper' class='pl-wrapper'>
+            <header id='pl-site-header' class='site-header'>
+                <div class="container">
+                    <b:section id='header' class='header' name='Header' maxwidgets='1' showaddelement='no'>
+                        <b:widget id='Header1' locked='true' type='Header'>
+                        </b:widget>
+                    </b:section>
+                </div>
+            </header>
+
+
+            <div id='pl-site-content' class='main-content'>
+                <b:section id='main' name='Main' showaddelement='no'>
+                    <b:widget id='Blog1' locked='true' type='Blog'>
+                    </b:widget>
+                </b:section>
+            </div>
+
+            <footer id="pl-site-footer" class="site-footer">
+                <div class="container">
+
+                </div>
+            </footer>
+        </div>
+    &lt;!--</body>--&gt;&lt;/body&gt;
 </html>
