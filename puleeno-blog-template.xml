@@ -6,9 +6,7 @@
     xmlns:data='http://www.google.com/2005/gml/data'
     xmlns:expr='http://www.google.com/2005/gml/expr'>
     &lt;head&gt;
-    <title>
-        <data:blog.pageTitle/>
-    </title>
+    <title><data:blog.pageTitle/></title>
     <b:skin>
         <![CDATA[##############################
             Name: Puleeno Blog
