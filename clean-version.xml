@@ -22,7 +22,7 @@
         <b:variable default='400px' name='main.column.right.width' type='length'/>
 
         <![CDATA[
-        .container{
+        .container {
             width: $(content.width);
             margin: 0 auto;
         }
@@ -33,12 +33,23 @@
     <body>
         <div id='pl-site-wrapper' class='site-wrapper'>
             <header id='pl-site-header' class='site-header'>
-                <div class="container">
-                    <div class="site-header-inner">
-                        <b:section id='header' class='header' name='Header' maxwidgets='1' showaddelement='no'>
-                            <b:widget id='Header1' locked='true' type='Header'>
-                            </b:widget>
-                        </b:section>
+                <div class="site-header-inner">
+                    <div class="header-widget">
+                        <div class="container">
+                            <b:section id='header' class='header' name='Header' maxwidgets='1' showaddelement='no'>
+                                <b:widget id='Header1' locked='true' type='Header'>
+                                </b:widget>
+                            </b:section>
+                        </div>
+                    </div>
+
+                    <div class="site-navigation">
+                        <div class="container">
+                            <b:section id='navigation' class='navigation' name='Navigation' maxwidgets='1' showaddelement='no'>
+                                <b:widget id='LinkList1' locked='true' type='LinkList'>
+                                </b:widget>
+                            </b:section>
+                        </div>
                     </div>
                 </div>
             </header>
