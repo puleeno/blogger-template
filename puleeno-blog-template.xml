@@ -7,6 +7,7 @@
     xmlns:expr='http://www.google.com/2005/gml/expr'>
     &lt;head&gt;
     <title><data:blog.pageTitle/></title>
+    <b:include data='blog' name='all-head-content' />
     <b:skin>
         <![CDATA[##############################
             Name: Puleeno Blog
