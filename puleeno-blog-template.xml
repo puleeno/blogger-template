@@ -23,26 +23,34 @@
         <b:section class='navbar' id='navbar' maxwidgets='1' name='Navbar' showaddelement='no'>
             <b:widget id='Navbar1' locked='true' type='Navbar'></b:widget>
         </b:section>
-        <div id='pl-wrapper' class='pl-wrapper'>
+        <div id='pl-site-wrapper' class='site-wrapper'>
             <header id='pl-site-header' class='site-header'>
                 <div class="container">
-                    <b:section id='header' class='header' name='Header' maxwidgets='1' showaddelement='no'>
-                        <b:widget id='Header1' locked='true' type='Header'>
-                        </b:widget>
-                    </b:section>
+                    <div class="site-header-inner">
+                        <b:section id='header' class='header' name='Header' maxwidgets='1' showaddelement='no'>
+                            <b:widget id='Header1' locked='true' type='Header'>
+                            </b:widget>
+                        </b:section>
+                    </div>
                 </div>
             </header>
 
 
-            <div id='pl-site-content' class='main-content'>
-                <b:section id='main' name='Main' showaddelement='no'>
-                    <b:widget id='Blog1' locked='true' type='Blog'>
-                    </b:widget>
-                </b:section>
+            <div id='pl-site-content' class='site-content'>
+                <div class='container'>
+                    <div class='site-content-inner'>
+                        <div id='pl-main' class='main'>
+                            <b:section id='main' name='Main' showaddelement='no'>
+                                <b:widget id='Blog1' locked='true' type='Blog'>
+                                </b:widget>
+                            </b:section>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <footer id="pl-site-footer" class="site-footer">
-                <div class="container">
+            <footer id='pl-site-footer' class='site-footer'>
+                <div class="site-footer-inner">
                     <macro:include id='footer-sections' name='sections'>
                         <macro:param default='' name='name' value='Footer' />
                         <macro:param default='3' name='col' />
@@ -54,7 +62,7 @@
             </footer>
         </div>
     &lt;!--</body>--&gt;&lt;/body&gt;
-    <macro:includable id="sections" var="pl">
+    <macro:includable id='sections' var='pl'>
         <macro:if cond='data:pl.col > 0'>
             <b:section mexpr:id='data:pl.idPrefix + "1"' mexpr:class='data:pl.class' mexpr:name='data:pl.name + " 1"' />
         </macro:if>
