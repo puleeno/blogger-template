@@ -6,7 +6,7 @@
     xmlns:data='http://www.google.com/2005/gml/data'
     xmlns:expr='http://www.google.com/2005/gml/expr'>
     &lt;head&gt;
-    <title><data:blog.pageTitle/></title>
+    <title><data:blog.pageTitle /></title>
     <b:include data='blog' name='all-head-content' />
     <b:skin>
         <![CDATA[##############################
@@ -17,13 +17,20 @@
         ]]>
     </b:skin>
     <b:template-skin>
+        <b:variable default='1100px' name='content.width' type='length'/>
+        <b:variable default='0' name='main.column.left.width' type='length'/>
+        <b:variable default='400px' name='main.column.right.width' type='length'/>
+
+        <![CDATA[
+        .container{
+            width: $(content.width);
+            margin: 0 auto;
+        }
+        ]]>
     </b:template-skin>
     &lt;/head&gt;&lt;!--<head/>--&gt;
 
     <body>
-        <b:section class='navbar' id='navbar' maxwidgets='1' name='Navbar' showaddelement='no'>
-            <b:widget id='Navbar1' locked='true' type='Navbar'></b:widget>
-        </b:section>
         <div id='pl-site-wrapper' class='site-wrapper'>
             <header id='pl-site-header' class='site-header'>
                 <div class="container">
@@ -59,6 +66,14 @@
                         <macro:param default='foot' name='class' />
                         <macro:param default='false' name='includeBottom' />
                     </macro:include>
+                </div>
+                <div class="site-copyright">
+                    <div class="container">
+                        <b:section id='copyright' name='Copyright' maxwidgets='1' showaddelement='no'>
+                            <b:widget id='Attribution1' locked='true' type='Attribution'>
+                            </b:widget>
+                        </b:section>
+                    </div>
                 </div>
             </footer>
         </div>
