@@ -11,6 +11,10 @@
         <data:blog.pageTitle />
     </title>
     <b:include data='blog' name='all-head-content' />
+    <script>
+        var fbPageID = '';
+        var waitTimesMessengerPlatform = 3000;
+    </script>
     <b:skin>
         <![CDATA[/*
 --------------------------------
@@ -166,8 +170,7 @@ table {
                 </div>
             </footer>
         </div>
-    &lt;!--
-    </body>--&gt;&lt;/body&gt;
+    &lt;!--</body>--&gt;&lt;/body&gt;
 
     <macro:includable id='sections' var='col'>
         <macro:if cond='data:col.num == 0'>
