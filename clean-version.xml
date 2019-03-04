@@ -134,18 +134,18 @@ table {
                         </div>
                         <aside>
                             <macro:include id='main-column-left-sections' name='sections'>
-                                <macro:param default='0' name='num'/>
-                                <macro:param default='sidebar-left' name='idPrefix'/>
-                                <macro:param default='sidebar' name='class'/>
-                                <macro:param default='true' name='includeBottom'/>
+                                <macro:param default='0' name='num' />
+                                <macro:param default='sidebar-left' name='idPrefix' />
+                                <macro:param default='sidebar' name='class' />
+                                <macro:param default='true' name='includeBottom' />
                             </macro:include>
                         </aside>
                         <aside>
                             <macro:include id='main-column-right-sections' name='sections'>
-                                <macro:param default='2' name='num'/>
-                                <macro:param default='sidebar-right' name='idPrefix'/>
-                                <macro:param default='sidebar' name='class'/>
-                                <macro:param default='true' name='includeBottom'/>
+                                <macro:param default='2' name='num' />
+                                <macro:param default='sidebar-right' name='idPrefix' />
+                                <macro:param default='sidebar' name='class' />
+                                <macro:param default='true' name='includeBottom' />
                             </macro:include>
                         </aside>
                     </div>
@@ -169,12 +169,16 @@ table {
                 </div>
             </footer>
         </div>
+        <macro:include id='facebook-live-chat' name='facebook-customer-chat'>
+            <macro:param name='page_id' default='' />
+            <macro:param name='wait_times' default='3000' />
+        </macro:include>
     &lt;!--</body>--&gt;&lt;/body&gt;
 
     <macro:includable id='sections' var='col'>
         <macro:if cond='data:col.num == 0'>
             <macro:else/>
-            <b:section mexpr:class='data:col.class' mexpr:id='data:col.idPrefix + &quot;-1&quot;' preferred='yes' showaddelement='yes'/>
+            <b:section mexpr:class='data:col.class' mexpr:id='data:col.idPrefix + &quot;-1&quot;' preferred='yes' showaddelement='yes' />
             <macro:if cond='data:col.num &gt;= 2'>
                 <table border='0' cellpadding='0' cellspacing='0' mexpr:class='&quot;section-columns columns-&quot; + data:col.num'>
                     <tbody>
@@ -199,30 +203,38 @@ table {
                     </tbody>
                 </table>
                 <macro:if cond='data:col.includeBottom'>
-                    <b:section mexpr:class='data:col.class' mexpr:id='data:col.idPrefix + &quot;-3&quot;' showaddelement='no'/>
+                    <b:section mexpr:class='data:col.class' mexpr:id='data:col.idPrefix + &quot;-3&quot;' showaddelement='no' />
                 </macro:if>
             </macro:if>
         </macro:if>
     </macro:includable>
 
-    <macro:includable id='facebookCustomChat' var='facebook'>
-        <b:if cond='data:facebook.page_id'>
-            var messengerWaitTimes = 3000;
-            setTimeout(function() {
-                window.fbAsyncInit = function() {
-                    FB.init({
-                    xfbml            : true,
-                    version          : 'v3.2'
-                    });
-                };
-                (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-                fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-            }, messengerWaitTimes);
-        </b:if>
+    <macro:includable id='facebook-customer-chat' var='facebook'>
+        <macro:if cond='data:facebook.page_id != ""'>
+        <!-- Your customer chat code -->
+        &lt;div class="fb-customerchat" attribution=setup_tool page_id="<data:facebook.page_id />"&gt;&lt;/div&gt;
+        <script>
+            (function(document, window, domIsReady, undefined) {
+                domIsReady(function() {
+                    var messengerWaitTimes = <data:facebook.wait_times />;
+                    setTimeout(function() {
+                        window.fbAsyncInit = function() {
+                            FB.init({
+                            xfbml : true,
+                            version : 'v3.2'
+                            });
+                        };
+                        (function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+                    }, messengerWaitTimes);
+                });
+            })(document, window, domIsReady);
+        </script>
+        </macro:if>
     </macro:includable>
 </html>
