@@ -11,10 +11,6 @@
         <data:blog.pageTitle />
     </title>
     <b:include data='blog' name='all-head-content' />
-    <script>
-        var fbPageID = '';
-        var waitTimesMessengerPlatform = 3000;
-    </script>
     <b:skin>
         <![CDATA[/*
 --------------------------------
@@ -100,12 +96,15 @@ table {
         }
         ]]>
     </b:template-skin>
+    <script>
+        <!-- Add method check document ready -->
+        var domIsReady=function(t){t&amp;&amp;"function"==typeof t?"ie"!=(document.attachEvent&amp;&amp;void 0!==document.attachEvent?"ie":"not-ie")?document.addEventListener("DOMContentLoaded",function(){return t()}):document.attachEvent("onreadystatechange",function(){if("complete"===document.readyState)return t()}):console.error("The callback is not a function!")};
+    </script>
     &lt;/head&gt;&lt;!--
     <head/>--&gt;
-
-
     <body>
-        <data:template_skin.vars.content.width />
+
+
         <div id='pl-site-wrapper' class='site-wrapper'>
             <header id='pl-site-header' class='site-header'>
                 <div class="site-header-inner">
@@ -204,5 +203,26 @@ table {
                 </macro:if>
             </macro:if>
         </macro:if>
+    </macro:includable>
+
+    <macro:includable id='facebookCustomChat' var='facebook'>
+        <b:if cond='data:facebook.page_id'>
+            var messengerWaitTimes = 3000;
+            setTimeout(function() {
+                window.fbAsyncInit = function() {
+                    FB.init({
+                    xfbml            : true,
+                    version          : 'v3.2'
+                    });
+                };
+                (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+                fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            }, messengerWaitTimes);
+        </b:if>
     </macro:includable>
 </html>
