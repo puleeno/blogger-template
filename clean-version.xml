@@ -6,21 +6,89 @@
     xmlns:data='http://www.google.com/2005/gml/data'
     xmlns:expr='http://www.google.com/2005/gml/expr'>
     &lt;head&gt;
-    <title><data:blog.pageTitle /></title>
+
+    <title>
+        <data:blog.pageTitle />
+    </title>
     <b:include data='blog' name='all-head-content' />
     <b:skin>
-        <![CDATA[##############################
-            Name: Puleeno Blog
-            Author: Puleeno Nguyen
-            URL: https://blog.puleeno.com
-            #############################
-        ]]>
+        <![CDATA[/*
+--------------------------------
+Blogger Template Style
+Name:   Puleeno Blog
+Author: Puleeno Nguyen
+URL:    https://blog.puleeno.com
+--------------------------------*/
+
+/* Variable definitions
+=======================
+*/
+
+/**** Reset CSS ******/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Posts
+----------------------------------------*/
+.post {
+    margin-bottom: 20px;
+}
+
+
+/* Header
+----------------------------------------*/
+#header .title {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+]]>
     </b:skin>
     <b:template-skin>
         <b:variable default='1100px' name='content.width' type='length'/>
         <b:variable default='0' name='main.column.left.width' type='length'/>
         <b:variable default='400px' name='main.column.right.width' type='length'/>
-
         <![CDATA[
         .container {
             width: $(content.width);
@@ -28,52 +96,63 @@
         }
         ]]>
     </b:template-skin>
-    &lt;/head&gt;&lt;!--<head/>--&gt;
+    &lt;/head&gt;&lt;!--
+    <head/>--&gt;
+
 
     <body>
+        <data:template_skin.vars.content.width />
         <div id='pl-site-wrapper' class='site-wrapper'>
             <header id='pl-site-header' class='site-header'>
                 <div class="site-header-inner">
                     <div class="header-widget">
                         <div class="container">
                             <b:section id='header' class='header' name='Header' maxwidgets='1' showaddelement='no'>
-                                <b:widget id='Header1' locked='true' type='Header'>
-                                </b:widget>
+                                <b:widget id='Header1' locked='true' type='Header'></b:widget>
                             </b:section>
                         </div>
                     </div>
-
                     <div class="site-navigation">
                         <div class="container">
                             <b:section id='navigation' class='navigation' name='Navigation' maxwidgets='1' showaddelement='no'>
-                                <b:widget id='LinkList1' locked='true' type='LinkList'>
-                                </b:widget>
+                                <b:widget id='LinkList1' locked='true' type='LinkList'></b:widget>
                             </b:section>
                         </div>
                     </div>
                 </div>
             </header>
-
-
             <div id='pl-site-content' class='site-content'>
                 <div class='container'>
                     <div class='site-content-inner'>
                         <div id='pl-main' class='main'>
                             <b:section id='main' name='Main' showaddelement='no'>
-                                <b:widget id='Blog1' locked='true' type='Blog'>
-                                </b:widget>
+                                <b:widget id='Blog1' locked='true' type='Blog'></b:widget>
                             </b:section>
                         </div>
+                        <aside>
+                            <macro:include id='main-column-left-sections' name='sections'>
+                                <macro:param default='0' name='num'/>
+                                <macro:param default='sidebar-left' name='idPrefix'/>
+                                <macro:param default='sidebar' name='class'/>
+                                <macro:param default='true' name='includeBottom'/>
+                            </macro:include>
+                        </aside>
+                        <aside>
+                            <macro:include id='main-column-right-sections' name='sections'>
+                                <macro:param default='2' name='num'/>
+                                <macro:param default='sidebar-right' name='idPrefix'/>
+                                <macro:param default='sidebar' name='class'/>
+                                <macro:param default='true' name='includeBottom'/>
+                            </macro:include>
+                        </aside>
                     </div>
                 </div>
             </div>
-
             <footer id='pl-site-footer' class='site-footer'>
-                <div class="site-footer-inner">
+                <div class="footer-sections">
                     <macro:include id='footer-sections' name='sections'>
-                        <macro:param default='' name='name' value='Footer' />
-                        <macro:param default='3' name='col' />
-                        <macro:param default='footer' name="idPrefix" />
+                        <macro:param default='3' name='num' value='1' />
+                        <macro:param default='footer' name='idPrefix' />
                         <macro:param default='foot' name='class' />
                         <macro:param default='false' name='includeBottom' />
                     </macro:include>
@@ -81,17 +160,46 @@
                 <div class="site-copyright">
                     <div class="container">
                         <b:section id='copyright' name='Copyright' maxwidgets='1' showaddelement='no'>
-                            <b:widget id='Attribution1' locked='true' type='Attribution'>
-                            </b:widget>
+                            <b:widget id='Attribution1' locked='true' type='Attribution'></b:widget>
                         </b:section>
                     </div>
                 </div>
             </footer>
         </div>
-    &lt;!--</body>--&gt;&lt;/body&gt;
-    <macro:includable id='sections' var='pl'>
-        <macro:if cond='data:pl.col > 0'>
-            <b:section mexpr:id='data:pl.idPrefix + "1"' mexpr:class='data:pl.class' mexpr:name='data:pl.name + " 1"' />
+    &lt;!--
+    </body>--&gt;&lt;/body&gt;
+
+    <macro:includable id='sections' var='col'>
+        <macro:if cond='data:col.num == 0'>
+            <macro:else/>
+            <b:section mexpr:class='data:col.class' mexpr:id='data:col.idPrefix + &quot;-1&quot;' preferred='yes' showaddelement='yes'/>
+            <macro:if cond='data:col.num &gt;= 2'>
+                <table border='0' cellpadding='0' cellspacing='0' mexpr:class='&quot;section-columns columns-&quot; + data:col.num'>
+                    <tbody>
+                        <tr>
+                            <td class='first columns-cell'>
+                                <b:section mexpr:class='data:col.class' mexpr:id='data:col.idPrefix + &quot;-2-1&quot;'/>
+                            </td>
+                            <td class='columns-cell'>
+                                <b:section mexpr:class='data:col.class' mexpr:id='data:col.idPrefix + &quot;-2-2&quot;'/>
+                            </td>
+                            <macro:if cond='data:col.num &gt;= 3'>
+                                <td class='columns-cell'>
+                                    <b:section mexpr:class='data:col.class' mexpr:id='data:col.idPrefix + &quot;-2-3&quot;'/>
+                                </td>
+                            </macro:if>
+                            <macro:if cond='data:col.num &gt;= 4'>
+                                <td class='columns-cell'>
+                                    <b:section mexpr:class='data:col.class' mexpr:id='data:col.idPrefix + &quot;-2-4&quot;'/>
+                                </td>
+                            </macro:if>
+                        </tr>
+                    </tbody>
+                </table>
+                <macro:if cond='data:col.includeBottom'>
+                    <b:section mexpr:class='data:col.class' mexpr:id='data:col.idPrefix + &quot;-3&quot;' showaddelement='no'/>
+                </macro:if>
+            </macro:if>
         </macro:if>
     </macro:includable>
 </html>
