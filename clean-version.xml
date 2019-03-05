@@ -10,7 +10,9 @@
     <title>
         <data:blog.pageTitle />
     </title>
-    <b:include data='blog' name='all-head-content' />
+    <b:include data='blog' name='all-head-content'/>
+    <b:include data='blog' name='google-analytics'/>
+
     <b:skin>
         <![CDATA[/*
 --------------------------------
@@ -491,7 +493,7 @@ textarea {
           </footer>
       </div>
       <macro:include id='facebook-live-chat' name='facebook-customer-chat'>
-          <macro:param name='page_id' default='' value='237897090383482' />
+          <macro:param name='page_id' default='' />
           <macro:param name='wait_times' default='3000' />
       </macro:include>
       <script>
