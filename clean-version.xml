@@ -589,6 +589,7 @@ textarea {
       4. hover-effect
       5. read more style
       6. data type
+      7. load-type (ajax or normal)
       -->
     </macro:includable>
 </html>
