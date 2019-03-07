@@ -569,4 +569,21 @@ textarea {
         Addition: menu icons, menu images
         -->
     </macro:includable>
+
+    <macro:includable id='comments' var='comment'>
+      <!--
+        Comment systems are supported:
+        1. Disqus
+        2. Facebook
+        3. Blogger
+      -->
+      <macro:if cond='comment.disqus'>
+      </macro:if>
+
+      <macro:if cond='comment.facebook'>
+      </macro:if>
+
+      <macro:if cond='comment.blogger'>
+      </macro:if>
+    </macro:includable>
 </html>
