@@ -6,13 +6,11 @@
     xmlns:data='http://www.google.com/2005/gml/data'
     xmlns:expr='http://www.google.com/2005/gml/expr'>
     &lt;head&gt;
-
     <title>
         <data:blog.pageTitle />
     </title>
     <b:include data='blog' name='all-head-content'/>
     <b:include data='blog' name='google-analytics'/>
-
     <b:skin>
         <![CDATA[/*
 --------------------------------
@@ -424,79 +422,76 @@ textarea {
     <script>
         <!-- Add method check document ready -->
         var domIsReady=function(t){t&amp;&amp;"function"==typeof t?"ie"!=(document.attachEvent&amp;&amp;void 0!==document.attachEvent?"ie":"not-ie")?document.addEventListener("DOMContentLoaded",function(){return t()}):document.attachEvent("onreadystatechange",function(){if("complete"===document.readyState)return t()}):console.error("The callback is not a function!")};
+
     </script>
     &lt;/head&gt;&lt;!--
+
     <head/>--&gt;
+
     <body>
-      <div id='pl-site-wrapper' class='site-wrapper'>
-          <header id='pl-site-header' class='site-header'>
-              <div class="site-header-inner">
-                  <div class="header-widget">
-                      <div class="container">
-                          <b:section id='header' class='header' name='Header' maxwidgets='1' showaddelement='no'>
-                              <b:widget id='Header1' locked='true' type='Header'></b:widget>
-                          </b:section>
-                      </div>
-                  </div>
-                  <div class="site-navigation">
-                      <div class="container">
-                          <b:section id='navigation' class='navigation' name='Navigation' maxwidgets='1' showaddelement='no'>
-                              <b:widget id='LinkList1' locked='true' type='LinkList'></b:widget>
-                          </b:section>
-                      </div>
-                  </div>
-              </div>
-          </header>
-          <div id='pl-site-content' class='site-content'>
-              <div class='container'>
-                  <div class='site-content-inner'>
-                      <div id='pl-main' class='main'>
-                          <b:section id='main' name='Main' showaddelement='no'>
-                              <b:widget id='Blog1' locked='true' type='Blog'></b:widget>
-                          </b:section>
-                      </div>
-                      <aside>
-                          <macro:include id='main-column-left-sections' name='sections'>
-                              <macro:param default='0' name='num' />
-                              <macro:param default='sidebar-left' name='idPrefix' />
-                              <macro:param default='sidebar' name='class' />
-                              <macro:param default='true' name='includeBottom' />
-                          </macro:include>
-                      </aside>
-                      <aside>
-                          <macro:include id='main-column-right-sections' name='sections'>
-                              <macro:param default='2' name='num' />
-                              <macro:param default='sidebar-right' name='idPrefix' />
-                              <macro:param default='sidebar' name='class' />
-                              <macro:param default='true' name='includeBottom' />
-                          </macro:include>
-                      </aside>
-                  </div>
-              </div>
-          </div>
-          <footer id='pl-site-footer' class='site-footer'>
-              <div class="footer-sections">
-                  <macro:include id='footer-sections' name='sections'>
-                      <macro:param default='3' name='num' value='1' />
-                      <macro:param default='footer' name='idPrefix' />
-                      <macro:param default='foot' name='class' />
-                      <macro:param default='false' name='includeBottom' />
-                  </macro:include>
-              </div>
-              <div class="site-copyright">
-                  <div class="container">
-                      <b:section id='copyright' name='Copyright' maxwidgets='1' showaddelement='no'>
-                          <b:widget id='Attribution1' locked='true' type='Attribution'></b:widget>
-                      </b:section>
-                  </div>
-              </div>
-          </footer>
-      </div>
-      <macro:include id='facebook-live-chat' name='facebook-customer-chat'>
-          <macro:param name='page_id' default='' />
-          <macro:param name='wait_times' default='3000' />
-      </macro:include>
-      <script>
+        <div id='pl-site-wrapper' class='site-wrapper'>
+            <header id='pl-site-header' class='site-header'>
+                <div class='container'>
+                    <div class='site-header-inner'>
+                        <b:section id='header' class='header' name='Header' maxwidgets='1' showaddelement='no'>
+                            <b:widget id='Header1' locked='true' type='Header'></b:widget>
+                        </b:section>
+                        <div id='site-navigation' class='menu'>
+                            <!-- Menu code -->
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div id='pl-site-content' class='site-content'>
+                <div class='container'>
+                    <div class='site-content-inner'>
+                        <div id='pl-main' class='main'>
+                            <b:section id='main' name='Main' showaddelement='no'>
+                                <b:widget id='Blog1' locked='true' type='Blog'></b:widget>
+                            </b:section>
+                        </div>
+                        <aside>
+                            <macro:include id='main-column-left-sections' name='sections'>
+                                <macro:param default='0' name='num' />
+                                <macro:param default='sidebar-left' name='idPrefix' />
+                                <macro:param default='sidebar' name='class' />
+                                <macro:param default='true' name='includeBottom' />
+                            </macro:include>
+                        </aside>
+                        <aside>
+                            <macro:include id='main-column-right-sections' name='sections'>
+                                <macro:param default='2' name='num' />
+                                <macro:param default='sidebar-right' name='idPrefix' />
+                                <macro:param default='sidebar' name='class' />
+                                <macro:param default='true' name='includeBottom' />
+                            </macro:include>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <footer id='pl-site-footer' class='site-footer'>
+                <div class="footer-sections">
+                    <macro:include id='footer-sections' name='sections'>
+                        <macro:param default='3' name='num' value='1' />
+                        <macro:param default='footer' name='idPrefix' />
+                        <macro:param default='foot' name='class' />
+                        <macro:param default='false' name='includeBottom' />
+                    </macro:include>
+                </div>
+                <div class="site-copyright">
+                    <div class="container">
+                        <b:section id='copyright' name='Copyright' maxwidgets='1' showaddelement='no'>
+                            <b:widget id='Attribution1' locked='true' type='Attribution'></b:widget>
+                        </b:section>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <macro:include id='facebook-live-chat' name='facebook-customer-chat'>
+            <macro:param name='page_id' default='' />
+            <macro:param name='wait_times' default='3000' />
+        </macro:include>
+        <script>
         !function(t){if("object"==typeof exports&amp;&amp;"undefined"!=typeof module)module.exports=t();else if("function"==typeof define&amp;&amp;define.amd)define([],t);else{var e;"undefined"!=typeof window?e=window:"undefined"!=typeof global?e=global:"undefined"!=typeof self&amp;&amp;(e=self),e.Slideout=t()}}(function(){var t,e,n;return function i(t,e,n){function o(r,a){if(!e[r]){if(!t[r]){var u=typeof require=="function"&amp;&amp;require;if(!a&amp;&amp;u)return u(r,!0);if(s)return s(r,!0);var l=new Error("Cannot find module '"+r+"'");throw l.code="MODULE_NOT_FOUND",l}var f=e[r]={exports:{}};t[r][0].call(f.exports,function(e){var n=t[r][1][e];return o(n?n:e)},f,f.exports,i,t,e,n)}return e[r].exports}var s=typeof require=="function"&amp;&amp;require;for(var r=0;r&lt;n.length;r++)o(n[r]);return o}({1:[function(t,e,n){"use strict";var i=t("decouple");var o=t("emitter");var s;var r=false;var a=window.document;var u=a.documentElement;var l=window.navigator.msPointerEnabled;var f={start:l?"MSPointerDown":"touchstart",move:l?"MSPointerMove":"touchmove",end:l?"MSPointerUp":"touchend"};var h=function v(){var t=/^(Webkit|Khtml|Moz|ms|O)(?=[A-Z])/;var e=a.getElementsByTagName("script")[0].style;for(var n in e){if(t.test(n)){return"-"+n.match(t)[0].toLowerCase()+"-"}}if("WebkitOpacity"in e){return"-webkit-"}if("KhtmlOpacity"in e){return"-khtml-"}return""}();function c(t,e){for(var n in e){if(e[n]){t[n]=e[n]}}return t}function p(t,e){t.prototype=c(t.prototype||{},e.prototype)}function d(t){while(t.parentNode){if(t.getAttribute("data-slideout-ignore")!==null){return t}t=t.parentNode}return null}function _(t){t=t||{};this._startOffsetX=0;this._currentOffsetX=0;this._opening=false;this._moved=false;this._opened=false;this._preventOpen=false;this._touch=t.touch===undefined?true:t.touch&amp;&amp;true;this._side=t.side||"left";this.panel=t.panel;this.menu=t.menu;if(!this.panel.classList.contains("slideout-panel")){this.panel.classList.add("slideout-panel")}if(!this.panel.classList.contains("slideout-panel-"+this._side)){this.panel.classList.add("slideout-panel-"+this._side)}if(!this.menu.classList.contains("slideout-menu")){this.menu.classList.add("slideout-menu")}if(!this.menu.classList.contains("slideout-menu-"+this._side)){this.menu.classList.add("slideout-menu-"+this._side)}this._fx=t.fx||"ease";this._duration=parseInt(t.duration,10)||300;this._tolerance=parseInt(t.tolerance,10)||70;this._padding=this._translateTo=parseInt(t.padding,10)||256;this._orientation=this._side==="right"?-1:1;this._translateTo*=this._orientation;if(this._touch){this._initTouchEvents()}}p(_,o);_.prototype.open=function(){var t=this;this.emit("beforeopen");if(!u.classList.contains("slideout-open")){u.classList.add("slideout-open")}this._setTransition();this._translateXTo(this._translateTo);this._opened=true;setTimeout(function(){t.panel.style.transition=t.panel.style["-webkit-transition"]="";t.emit("open")},this._duration+50);return this};_.prototype.close=function(){var t=this;if(!this.isOpen()&amp;&amp;!this._opening){return this}this.emit("beforeclose");this._setTransition();this._translateXTo(0);this._opened=false;setTimeout(function(){u.classList.remove("slideout-open");t.panel.style.transition=t.panel.style["-webkit-transition"]=t.panel.style[h+"transform"]=t.panel.style.transform="";t.emit("close")},this._duration+50);return this};_.prototype.toggle=function(){return this.isOpen()?this.close():this.open()};_.prototype.isOpen=function(){return this._opened};_.prototype._translateXTo=function(t){this._currentOffsetX=t;this.panel.style[h+"transform"]=this.panel.style.transform="translateX("+t+"px)";return this};_.prototype._setTransition=function(){this.panel.style[h+"transition"]=this.panel.style.transition=h+"transform "+this._duration+"ms "+this._fx;return this};_.prototype._initTouchEvents=function(){var t=this;this._onScrollFn=i(a,"scroll",function(){if(!t._moved){clearTimeout(s);r=true;s=setTimeout(function(){r=false},250)}});this._preventMove=function(e){if(t._moved){e.preventDefault()}};a.addEventListener(f.move,this._preventMove);this._resetTouchFn=function(e){if(typeof e.touches==="undefined"){return}t._moved=false;t._opening=false;t._startOffsetX=e.touches[0].pageX;t._preventOpen=!t._touch||!t.isOpen()&amp;&amp;t.menu.clientWidth!==0};this.panel.addEventListener(f.start,this._resetTouchFn);this._onTouchCancelFn=function(){t._moved=false;t._opening=false};this.panel.addEventListener("touchcancel",this._onTouchCancelFn);this._onTouchEndFn=function(){if(t._moved){t.emit("translateend");t._opening&amp;&amp;Math.abs(t._currentOffsetX)&gt;t._tolerance?t.open():t.close()}t._moved=false};this.panel.addEventListener(f.end,this._onTouchEndFn);this._onTouchMoveFn=function(e){if(r||t._preventOpen||typeof e.touches==="undefined"||d(e.target)){return}var n=e.touches[0].clientX-t._startOffsetX;var i=t._currentOffsetX=n;if(Math.abs(i)&gt;t._padding){return}if(Math.abs(n)&gt;20){t._opening=true;var o=n*t._orientation;if(t._opened&amp;&amp;o&gt;0||!t._opened&amp;&amp;o&lt;0){return}if(!t._moved){t.emit("translatestart")}if(o&lt;=0){i=n+t._padding*t._orientation;t._opening=false}if(!(t._moved&amp;&amp;u.classList.contains("slideout-open"))){u.classList.add("slideout-open")}t.panel.style[h+"transform"]=t.panel.style.transform="translateX("+i+"px)";t.emit("translate",i);t._moved=true}};this.panel.addEventListener(f.move,this._onTouchMoveFn);return this};_.prototype.enableTouch=function(){this._touch=true;return this};_.prototype.disableTouch=function(){this._touch=false;return this};_.prototype.destroy=function(){this.close();a.removeEventListener(f.move,this._preventMove);this.panel.removeEventListener(f.start,this._resetTouchFn);this.panel.removeEventListener("touchcancel",this._onTouchCancelFn);this.panel.removeEventListener(f.end,this._onTouchEndFn);this.panel.removeEventListener(f.move,this._onTouchMoveFn);a.removeEventListener("scroll",this._onScrollFn);this.open=this.close=function(){};return this};e.exports=_},{decouple:2,emitter:3}],2:[function(t,e,n){"use strict";var i=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||function(t){window.setTimeout(t,1e3/60)}}();function o(t,e,n){var o,s=false;function r(t){o=t;a()}function a(){if(!s){i(u);s=true}}function u(){n.call(t,o);s=false}t.addEventListener(e,r,false);return r}e.exports=o},{}],3:[function(t,e,n){"use strict";var i=function(t,e){if(!(t instanceof e)){throw new TypeError("Cannot call a class as a function")}};n.__esModule=true;var o=function(){function t(){i(this,t)}t.prototype.on=function e(t,n){this._eventCollection=this._eventCollection||{};this._eventCollection[t]=this._eventCollection[t]||[];this._eventCollection[t].push(n);return this};t.prototype.once=function n(t,e){var n=this;function i(){n.off(t,i);e.apply(this,arguments)}i.listener=e;this.on(t,i);return this};t.prototype.off=function o(t,e){var n=undefined;if(!this._eventCollection||!(n=this._eventCollection[t])){return this}n.forEach(function(t,i){if(t===e||t.listener===e){n.splice(i,1)}});if(n.length===0){delete this._eventCollection[t]}return this};t.prototype.emit=function s(t){var e=this;for(var n=arguments.length,i=Array(n&gt;1?n-1:0),o=1;o&lt;n;o++){i[o-1]=arguments[o]}var s=undefined;if(!this._eventCollection||!(s=this._eventCollection[t])){return this}s=s.slice(0);s.forEach(function(t){return t.apply(e,i)});return this};return t}();n["default"]=o;e.exports=n["default"]},{}]},{},[1])(1)});
       </script>
     &lt;!--</body>--&gt;&lt;/body&gt;
@@ -534,15 +529,17 @@ textarea {
             </macro:if>
         </macro:if>
     </macro:includable>
-
     <macro:includable id='facebook-customer-chat' var='facebook'>
         <macro:if cond='data:facebook.page_id != ""'>
-        <!-- Your customer chat code -->
-        &lt;div class="fb-customerchat" attribution=setup_tool page_id="<data:facebook.page_id />"&gt;&lt;/div&gt;
-        <script>
+            <!-- Your customer chat code -->
+        &lt;div class="fb-customerchat" attribution=setup_tool page_id="
+            <data:facebook.page_id />"&gt;&lt;/div&gt;
+
+            <script>
             (function(document, window, domIsReady, undefined) {
                 domIsReady(function() {
-                    var messengerWaitTimes = <data:facebook.wait_times />;
+                    var messengerWaitTimes =
+                <data:facebook.wait_times />;
                     setTimeout(function() {
                         window.fbAsyncInit = function() {
                             FB.init({
@@ -560,7 +557,16 @@ textarea {
                     }, messengerWaitTimes);
                 });
             })(document, window, domIsReady);
-        </script>
+
+            </script>
         </macro:if>
+    </macro:includable>
+    <macro:includable id='menu' var='menu'>
+        <!--
+        Menu Type: links, posts, label, post with images, headers, submenu
+        Menu Style: dropdown, mega, complex mega
+        Load type: normal, ajax,
+        Addition: menu icons, menu images
+        -->
     </macro:includable>
 </html>
