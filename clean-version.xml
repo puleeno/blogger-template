@@ -569,4 +569,26 @@ textarea {
         Addition: menu icons, menu images
         -->
     </macro:includable>
+
+    <macro:includable id='post_layout' var='post_layout'>
+      <!--
+      Styles are supported:
+      1. slide (1 or 2 items)
+      2. left-one-right-list-image
+      3. left-one-right-list-text
+      4. mansory
+      5. left-image-rigth-info
+      6. card-list
+      7. two-columns-image-first
+      8. tabs
+
+      Options:
+      1. show-view-all
+      2. show-label
+      3. show-date
+      4. hover-effect
+      5. read more style
+      6. data type
+      -->
+    </macro:includable>
 </html>
