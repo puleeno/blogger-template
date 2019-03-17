@@ -9,6 +9,7 @@
     <title>
         <data:blog.pageTitle />
     </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <b:include data='blog' name='all-head-content'/>
     <b:include data='blog' name='google-analytics'/>
     <b:skin>
